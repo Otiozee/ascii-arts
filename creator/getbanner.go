@@ -2,6 +2,8 @@ package creator
 
 import "log"
 
+// GetBannerPath create a map of banner names (standard, shadow, thinkertoy)
+// and link them to their corresponding banner files.
 func GetBannerPath(name string) string {
 	banners := map[string]string{
 		"standard":   "creator/banners/standard.txt",

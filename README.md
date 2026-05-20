@@ -123,7 +123,7 @@ RuneToArt()
 ## Program Structure
 
 ```text
-ascii-arts/
+ascii-art/
 │
 ├── creator/
 │   ├── banners/
@@ -167,13 +167,13 @@ ascii-arts/
 Clone the repository:
 
 ```bash
-git clone https://acad.learn2earn.ng/git/USERNAME/ascii-arts.git
+git clone https://acad.learn2earn.ng/git/zeotokpa/ascii-art.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd ascii-arts
+cd ascii-art
 ```
 
 ---

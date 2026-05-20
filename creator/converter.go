@@ -8,6 +8,7 @@ import (
 
 var banner []string
 
+//the StringToArt func converts full text input into ASCII art.
 func StringToArt(text string, file string) (string, error) {
 
 	data, err := os.ReadFile(file)
@@ -27,7 +28,11 @@ func StringToArt(text string, file string) (string, error) {
 
 	content = strings.ReplaceAll(content, "\r", "")
 
-	banner = strings.Split(content, "\n\n")
+	content = content[1:] //removes the very first character "\n" from the banner file.
+
+	banner = strings.Split(content, "\n\n") //this is used because each ASCII character in the 
+	// banner file is separated by one empty line, 
+	// so \n\n separates one full character block from the next.
 
 	lines := strings.Split(text, "\n")
 
@@ -46,6 +51,7 @@ func StringToArt(text string, file string) (string, error) {
 	return result, nil
 }
 
+// LineToArt converts one line of text into ASCII-art rows.
 func LineToArt(line string) (string, error) {
 
 	if line == "" {
@@ -71,6 +77,7 @@ func LineToArt(line string) (string, error) {
 	return strings.Join(rows, "\n") + "\n", nil
 }
 
+// RuneToArt retrieves the ASCII-art representation of a single character from the loaded banner.
 func RuneToArt(char rune) (string, error) {
 
 	index := int(char) - 32
