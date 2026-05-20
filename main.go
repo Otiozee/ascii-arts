@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ascii-art/workers"
+	"ascii-arts/creator"
 	"fmt"
 	"log"
 	"os"
@@ -19,24 +19,24 @@ func main() {
 		banner = os.Args[1]
 		source = os.Args[2]
 	default:
-		log.Fatal("Usage: go run . [BANNER] [STRING]")
+		log.Fatal("Usage: go run . [BANNER] [STRING]\nExample: go run . \"Hello\" \"shadow\"\n")
 	}
 
-	source = workers.NormalizeInput(source)
-
+	source = creator.NormalizeInput(source)
+	
 	if source == "" {
 		fmt.Println()
 		return
 	}
 
-	if workers.IsOnlyNewlines(source) {
+	if creator.IsOnlyNewlines(source) {
 		for range source {
 			fmt.Println()
 		}
 		return
 	}
 
-	bannerPath := workers.GetBannerPath(banner)
+	bannerPath := creator.GetBannerPath(banner)
 
-	workers.Render(source, bannerPath)
+	creator.Render(source, bannerPath)
 }

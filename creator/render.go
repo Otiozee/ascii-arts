@@ -1,4 +1,4 @@
-package workers
+package creator
 
 import (
 	"fmt"
@@ -6,12 +6,14 @@ import (
 	"strings"
 )
 
-func Render(source, bannerPath string) {
-	lines := strings.Split(source, "\n")
+func Render(input, bannerPath string) {
+	lines := strings.Split(input, "\n")
 
 	for i, line := range lines {
 		if line == "" {
-			fmt.Println()
+			if i != 0 {
+				fmt.Println()
+			}
 			continue
 		}
 
@@ -22,8 +24,5 @@ func Render(source, bannerPath string) {
 
 		fmt.Print(res)
 
-		if i < len(lines)-1 {
-			fmt.Println()
-		}
 	}
 }
