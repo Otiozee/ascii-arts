@@ -138,7 +138,8 @@ ascii-art/
 │
 ├── converter_test.go
 ├── go.mod
-└── main.go
+├── main.go
+└── shell_test.sh
 ```
 
 ---
@@ -245,6 +246,14 @@ go run . thinkertoy "ASCII"
 ```
 
 ---
+
+### Run muiltiple examples from shell file
+```bash
+chmod +x shell_test.sh
+```
+```bash
+./shell_test.sh
+```
 
 ## Edge Cases Handled
 

@@ -205,7 +205,7 @@ func Test_StringToArt(t *testing.T) {
 }
 
 //=================================================================
-// Test LineToArt
+//Test LineToArt
 //=================================================================
 
 func Test_LineToArt(t *testing.T) {
@@ -254,7 +254,7 @@ func Test_LineToArt(t *testing.T) {
 }
 
 //=================================================================
-// Test RuneToArt
+//Test RuneToArt
 //=================================================================
 
 func Test_RuneToArt(t *testing.T) {

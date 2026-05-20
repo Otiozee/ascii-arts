@@ -8,7 +8,7 @@ import (
 )
 
 // the main function is the controller of the entire application flow
-// by following a determined workflow.
+// it operate by following a determined workflow.
 func main() {
 
 	var banner, source string
@@ -25,7 +25,7 @@ func main() {
 	}
 
 	source = creator.NormalizeInput(source)
-	
+
 	if source == "" {
 		return
 	}
