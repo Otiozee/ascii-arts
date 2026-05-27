@@ -1,9 +1,10 @@
 package main
 
 import (
-	"ascii-arts/creator"
 	"strings"
 	"testing"
+
+	"github.com/otiozee/ascii-arts/creator"
 )
 
 const banner = "creator/banners/standard.txt"
