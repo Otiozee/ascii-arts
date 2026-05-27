@@ -7,14 +7,16 @@ import (
 )
 
 var banner []string
+var bannerFS embed.FS
 
 //the StringToArt func converts full text input into ASCII art.
 func StringToArt(text string, file string) (string, error) {
 
-	data, err := os.ReadFile(file)
+	data, err := bannerFS.ReadFile("banners/" + style + ".txt")
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to read banner style: %w", err)
 	}
+	return string(data), nil
 
 	if text == "" {
 		return "", nil
