@@ -4,7 +4,7 @@ ASCII-ART is a text-to-ASCII-art conversion tool written in Go. It reads user in
 
 The application processes user input through a structured rendering pipeline: it normalizes escaped newlines, validates banner selection, loads banner files, converts characters into ASCII-art blocks, and finally renders the generated output to the terminal.
 
-This project demonstrates clean Go architecture, file handling with `os`, string processing with `strings`, rune manipulation, and modular program design. It also handles several edge cases such as:
+This project demonstrates clean Go architecture, file handling and resource compilation using `embed` and `os`, string processing with `strings`, rune manipulation, and modular program design. It also handles several edge cases such as:
 
 * empty input,
 * trailing newlines,
@@ -160,6 +160,7 @@ ascii-art/
   * `fmt`
   * `strings`
   * `log`
+  * `embed`
 
 ---
 
@@ -168,7 +169,7 @@ ascii-art/
 Clone the repository:
 
 ```bash
-git clone https://acad.learn2earn.ng/git/zeotokpa/ascii-art.git
+git clone https://github.com/Otiozee/ascii-arts.git
 ```
 
 Move into the project directory:

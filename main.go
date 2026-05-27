@@ -1,10 +1,11 @@
 package main
 
 import (
-	"ascii-arts/creator"
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/otiozee/ascii-arts/creator"
 )
 
 // the main function is the controller of the entire application flow

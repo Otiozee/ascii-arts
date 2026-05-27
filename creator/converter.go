@@ -1,22 +1,24 @@
 package creator
 
 import (
+	"embed"
 	"fmt"
-	"os"
 	"strings"
 )
 
 var banner []string
+
+//go:embed banners/*.txt
 var bannerFS embed.FS
 
-//the StringToArt func converts full text input into ASCII art.
+// the StringToArt func converts full text input into ASCII art.
 func StringToArt(text string, file string) (string, error) {
 
-	data, err := bannerFS.ReadFile("banners/" + style + ".txt")
+	cleanFile := strings.TrimPrefix(file, "creator/")
+	data, err := bannerFS.ReadFile(cleanFile)
 	if err != nil {
 		return "", fmt.Errorf("failed to read banner style: %w", err)
 	}
-	return string(data), nil
 
 	if text == "" {
 		return "", nil
@@ -32,8 +34,8 @@ func StringToArt(text string, file string) (string, error) {
 
 	content = content[1:] //removes the very first character "\n" from the banner file.
 
-	banner = strings.Split(content, "\n\n") //this is used because each ASCII character in the 
-	// banner file is separated by one empty line, 
+	banner = strings.Split(content, "\n\n") //this is used because each ASCII character in the
+	// banner file is separated by one empty line,
 	// so \n\n separates one full character block from the next.
 
 	lines := strings.Split(text, "\n")
