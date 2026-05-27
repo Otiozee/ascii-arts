@@ -272,6 +272,10 @@ chmod +x shell_test.sh
 
 ## Program Team
 
-* zeotokpa
-* aonminyi
-* umusa
+<a href="https://github.com">
+  <img src="https://github.com[.png?size=50](https://avatars.githubusercontent.com/u/152956908?v=4&size=64)" width="50" height="50" style="border-radius: 50%;" alt="otiozee profile">
+</a>
+<a href="https://github.com">
+  <img src="https://github.com[.png?size=50](https://avatars.githubusercontent.com/u/152956908?v=4&size=64)" width="50" height="50" style="border-radius: 50%;" alt="Contributor profile">
+</a>
+
