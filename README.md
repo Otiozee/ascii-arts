@@ -1,3 +1,5 @@
+> This project is designed as both a standalone CLI tool and a reusable Go package.
+
 # Overview
 
 ASCII-ART is a text-to-ASCII-art conversion tool written in Go. It reads user input from the command line and renders the text using selectable ASCII-art banner styles such as `standard`, `shadow`, and `thinkertoy`.
@@ -57,6 +59,8 @@ main()
 * `RuneToArt`
 
   * Retrieves the ASCII-art representation of a single character from the loaded banner.
+ 
+* Reusable Go package (`creator`)
 
 ---
 
@@ -268,6 +272,67 @@ chmod +x shell_test.sh
 * Escaped newline input (`\n`)
 * Spaces-only input
 
+---
+### Public API
+These functions can be imported into other Go projects.
+
+```go
+creator.NormalizeInput(...)
+creator.IsOnlyNewline(...)
+creator.GetBannerPath(...)
+creator.Render(...)
+creator.StringToArt(...)
+creator.LineToArt(...)
+creator.RuneToArt(...)
+```
+
+```go
+import "github.com/otiozee/ascii-arts/creator"
+```
+
+Example:
+
+```go
+package main
+
+import (
+"github.com/otiozee/ascii-arts/creator"
+"log"
+"os"
+)
+
+func main() {
+var banner, source string
+
+	switch len(os.Args) {
+	case 1:
+		banner = "standard"
+		source = os.Args[1]
+	case 2:
+		banner = os.Args[1]
+		source = os.Args[2]
+	default:
+		log.Fatal("Usage: go run . [BANNER] [STRING]\nExample: go run . \"Hello\" \"shadow\"\n")
+	}
+
+	source = creator.NormalizeInput(source)
+
+	if source == "" {
+		return
+	}
+
+	if creator.IsOnlyNewlines(source) {
+		for range source {
+			fmt.Println()
+		}
+		return
+	}
+
+	bannerPath := creator.GetBannerPath(banner)
+
+	creator.Render(source, bannerPath)
+}
+```
 ---
 
 ## Program Team
