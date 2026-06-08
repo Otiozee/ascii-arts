@@ -273,6 +273,10 @@ chmod +x shell_test.sh
 * Spaces-only input
 
 ---
+
+## Using as a Package
+
+This project can be imported and reused in other Go applications.
 ### Public API
 These functions can be imported into other Go projects.
 
